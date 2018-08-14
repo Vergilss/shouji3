@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<style>
+			.div2{width:200px;height:200px;background:purple;}
+		</style>
+	</head>
+	<body>
+		<div class="div1">
+			<input type="number" v-model="a"/>
+			<input type="number" v-model="b"/>
+			<div class="div2" v-bind:style="{width,height}"></div>
+		</div>
+	</body>
+</html>
+<script src="js/vue.js"></script>
+<script>
+	var x=new Vue({
+		el:".div1",
+		data:{
+			a:10,
+			b:10
+		},
+		computed:{
+			width(){
+				return this.a+"px"
+			},
+			height(){
+				return this.b+"px"
+			}
+		}
+	})
+</script>
